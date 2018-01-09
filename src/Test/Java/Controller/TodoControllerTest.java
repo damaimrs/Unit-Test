@@ -40,7 +40,7 @@ public class TodoControllerTest {
     public void setDown() throws Exception{
         Mockito.verifyNoMoreInteractions(todoService);
     }
-    
+
     @LocalServerPort
     private int serverPort;
 

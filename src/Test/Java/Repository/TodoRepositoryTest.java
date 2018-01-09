@@ -46,7 +46,13 @@ public class TodoRepositoryTest {
         BDDMockito.then(todoList).should().add(todo);
     }
 
-    /**
-     * fungsi getAll tidak perlu dibuat unit test karena fungsi ini tidak memanggil fungsi lain
-     */
+    @Test
+    public void getAllTest(){
+        List<Todo> todoList = new ArrayList<Todo>();
+
+        Todo todo = new Todo("Makan", TodoPriority.HIGH);
+        todoList.add(todo);
+
+        Assert.assertThat(todoList, Matchers.hasItem(todo));
+    }
 }
